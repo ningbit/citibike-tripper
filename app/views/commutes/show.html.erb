@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @commute.name %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @commute.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @commute.end %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @commute.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @commute.end_time %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @commute.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_commute_path(@commute) %> |
+<%= link_to 'Back', commutes_path %>

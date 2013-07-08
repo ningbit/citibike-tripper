@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  availableBikes: 1
+  availableDocks: 1
+  last_updated: 2013-07-08 19:46:29
+
+two:
+  name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  availableBikes: 1
+  availableDocks: 1
+  last_updated: 2013-07-08 19:46:29
