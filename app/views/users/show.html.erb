@@ -1,4 +1,4 @@
-<% if !@user.nil? %>
+<% if !@user.nil? && !@user.first_name.nil? %>
   <h2> Welcome, <%= @user.first_name %>!</h2>
 
   <p>
@@ -13,7 +13,13 @@
 
 
   <%= link_to 'Edit Your Profile', edit_user_path(@user) %></br>
-  <%= link_to 'Sign Out', destroy_user_session_path %>
+  <%= link_to 'Sign Out', logout_path %>
+
+  <div id="map-canvas"></div>
+<% elsif @user && @user.first_name.nil? %>
+  <h3> Please create your <a href="<%= edit_user_path(@user) %>">profile</a></h3>
 <% else %>
 <h3> Please <a href="<%= new_user_session_path %>">sign in</a> or <a href="<%=new_user_registration_path%>">sign up</a> first! </h3>
 <% end %>
+
+

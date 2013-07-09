@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'map'
   # GET /users
   # GET /users.json
   def index
@@ -13,9 +14,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if params[:id].nil?
-      @user = current_user
-    end
+    @user = current_user
+    @home_station = Station.find_by_station_id(@user.home_station)
+    @work_station = Station.find_by_station_id(@user.work_station)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
