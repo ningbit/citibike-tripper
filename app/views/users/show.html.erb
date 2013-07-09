@@ -27,12 +27,12 @@
 
 <p>
   <b>Home station:</b>
-  <%= @user.home_station.display_station %>
+  <%= @user.home_station.display_station unless @user.home_station.nil?  %>
 </p>
 
 <p>
   <b>Work station:</b>
-  <%= @user.work_station.display_station %>
+  <%= @user.work_station.display_station unless @user.work_station.nil?  %>
 </p>
 
 

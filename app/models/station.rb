@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class Station < ActiveRecord::Base
-  attr_accessible :availableBikes, :availableDocks, :last_updated, :latitude, :longitude, :name
+  attr_accessible :availableBikes, :availableDocks, :last_updated, :latitude, :longitude, :name, :station_id
 
   def self.generate_station(stationList)
     stationList.each do |station|
@@ -11,6 +11,7 @@ class Station < ActiveRecord::Base
       new_station[:longitude] = station[:longitude]
       new_station[:availableBikes] = station[:availableBikes]
       new_station[:availableDocks] = station[:availableDocks]
+      new_station[:station_id] = station[:id].to_i
       new_station[:last_updated] = @@refresh_time
       Station.create(new_station)
     end

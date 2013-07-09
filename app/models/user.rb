@@ -12,6 +12,6 @@ end
 
 class String
   def display_station
-    Station.find_by_id(self).name
+    Station.find_by_station_id(self).name
   end
 end
