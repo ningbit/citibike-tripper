@@ -1,7 +1,7 @@
 CitibikeTripper::Application.routes.draw do
   devise_for :users
 
-  root :to => "stations#index"
+  root :to => "users#index"
 
   resources :users
 
