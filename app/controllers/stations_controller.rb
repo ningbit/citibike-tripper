@@ -2,6 +2,8 @@ class StationsController < ApplicationController
   # GET /stations
   # GET /stations.json
   def index
+    Station.refresh
+    @refresh_time = Station.refresh_time
     @stations = Station.all
 
     respond_to do |format|
@@ -14,7 +16,6 @@ class StationsController < ApplicationController
   # GET /stations/1.json
   def show
     @station = Station.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @station }
