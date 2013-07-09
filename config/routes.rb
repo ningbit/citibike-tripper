@@ -1,7 +1,11 @@
 CitibikeTripper::Application.routes.draw do
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+  get '/logout', :to => 'stations#index'
+
   devise_for :users
 
-  root :to => "users#index"
+  root :to => "users#show"
 
   resources :users
 
