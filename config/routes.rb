@@ -1,4 +1,6 @@
 CitibikeTripper::Application.routes.draw do
+  root :to => "stations#index"
+
   resources :users
 
 
