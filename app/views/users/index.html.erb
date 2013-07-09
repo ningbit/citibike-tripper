@@ -21,8 +21,8 @@
     <td><%= user.email %></td>
     <td><%= user.twitter %></td>
     <td><%= user.cell_number %></td>
-    <td><%= Station.find_by_id(user.home_station).name %></td>
-    <td><%= Station.find_by_id(user.work_station).name %></td>
+    <td><%= user.home_station.display_station %></td>
+    <td><%= user.work_station.display_station %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

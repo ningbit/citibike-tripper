@@ -9,3 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :cell_number, :email, :first_name, :home_station, :last_name, :twitter, :work_station
 end
+
+class String
+  def display_station
+    Station.find_by_id(self).name
+  end
+end
